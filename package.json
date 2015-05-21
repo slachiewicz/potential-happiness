@@ -1,0 +1,21 @@
+{
+    "name": "potential-happiness",
+    "version": "0.1.0",
+    "description": "A Riemann dashboard for the TTY",
+    "main": "lib/index.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/algernon/potential-happiness.git"
+    },
+    "author": {
+        "name": "Gergely Nagy",
+        "email": "<algernon@madhouse-project.org>",
+        "url": "http://asylum.madhouse-project.org"
+    },
+    "license": "GPL-3+",
+    "dependencies": {
+        "blessed": "0.1.54",
+        "blessed-contrib": "2.0.5",
+        "ws": "0.7.2"
+    }
+}
