@@ -14,7 +14,14 @@ module.exports = {
          options: {label: "Memory usage %",
                    source: {query: 'service = "memory/percent-used"'}},
          width: 12,
-         height: 9},
+         height: 5},
+
+        {widget: ph.widgets.sparkline,
+         options: {label: "CPU usage %",
+                   source: {query: 'service = "cpu-average/cpu-used" and not tagged "summary"'},
+                   width: 200},
+         width: 12,
+         height: 3},
 
         {widget: ph.widgets.log,
          options: {label: "Events @ morgoth",
