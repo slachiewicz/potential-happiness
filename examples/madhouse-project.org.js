@@ -35,7 +35,11 @@ module.exports = {
          height: 1},
         {widget: ph.widgets.text,
          options: {label: "# Net kbps",
-                   source: {query: 'service = "total network traffic"'}},
+                   source: {query: 'service = "total network traffic"',
+                            transform: function (data) {
+                                data.metric = data.metric.toPrecision (4);
+                                return data;
+                            }}},
          pos_x: 11,
          pos_y: 7,
          width: 1,
