@@ -2,7 +2,9 @@
  * A dashboard for Riemann stats
  */
 
-var ph = require ('../lib/index');
+var ph   = require ('../lib/index'),
+    es   = require ('../lib/source/es'),
+    util = require ('../lib/util');
 
 module.exports = {
     grid: {rows: 9, cols: 18},
@@ -57,9 +59,8 @@ module.exports = {
                                 data.time = d.toLocaleTimeString ();
                                 return data;
                             }}},
-         width: 18,
+         width: 9,
          height: 4},
-
         {widget: ph.widgets.line_chart,
          options: {label: "Servers in rate",
                    width: 100,
@@ -71,6 +72,16 @@ module.exports = {
                                 data.time = d.toLocaleTimeString ();
                                 return data;
                             }}},
+         width: 9,
+         height: 4},
+
+        {widget: ph.widgets.log,
+         options: {label: "Logs (elastic)",
+                   source: {host: "localhost",
+                            index: "syslog-ng",
+                            method: "elasticsearch",
+                            limit: 34},
+                   on_message: util.syslog_to_log},
          width: 18,
          height: 4}
     ]
