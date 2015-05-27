@@ -1,12 +1,14 @@
 potential-happiness
 ===================
 
-A [riemann](http://riemann.io/) dashboard for the terminal.
+A dashboard for the terminal, for use with
+[riemann](http://riemann.io/) and/or
+[elasticsearch](https://www.elastic.co/products/elasticsearch).
 
 Demo
 ----
 
-**Riemann server statistics**
+**Riemann server statistics & local logs**
 <img src="./docs/screenshots/screenshot-1.png" alt="Screenshot" width="800">
 
 ([source code][demo:1:source])
@@ -16,8 +18,8 @@ Demo
 
 ([source code][demo:2:source])
 
- [demo:2:source]: https://raw.githubusercontent.com/algernon/potential-happiness/master/examples/madhouse-project.org.js
  [demo:1:source]: https://raw.githubusercontent.com/algernon/potential-happiness/master/examples/local-log.js
+ [demo:2:source]: https://raw.githubusercontent.com/algernon/potential-happiness/master/examples/madhouse-project.org.js
 
 Installation
 ------------
