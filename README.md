@@ -26,7 +26,7 @@ Installation
 git clone https://github.com/algernon/potential-happiness.git
 cd potential-happiness
 npm install
-src/dashboard.js examples/local-riemann-stats.js
+src/dashboard.js examples/local-log.js
 ```
 
 License
