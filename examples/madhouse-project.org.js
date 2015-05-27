@@ -80,8 +80,7 @@ module.exports = {
 
         {widget: ph.widgets.log,
          options: {label: "Logs",
-                   source: {host: process.env.ELASTIC_HOST || "localhost",
-                            index: "syslog-ng",
+                   source: {index: "syslog-ng",
                             method: "elasticsearch",
                             limit: 14},
                    on_message: util.syslog_to_log},
