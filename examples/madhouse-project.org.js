@@ -2,7 +2,8 @@
  * This is the configuration used by the author.
  */
 
-var ph = require ('../lib/index');
+var ph   = require ('../lib/index'),
+    util = require ('../lib/util');
 
 module.exports = {
     grid: {rows: 10, cols: 14},
@@ -74,7 +75,17 @@ module.exports = {
         {widget: ph.widgets.sparkline,
          options: {label: "SSH invalid logins",
                    source: {query: 'service =~ "tail-auth/counter-sshd-invalid_user"'}},
-         width: 4,
+         width: 3,
          height: 2},
+
+        {widget: ph.widgets.log,
+         options: {label: "Logs",
+                   source: {host: process.env.ELASTIC_HOST || "localhost",
+                            index: "syslog-ng",
+                            method: "elasticsearch",
+                            limit: 14},
+                   on_message: util.syslog_to_log},
+         width: 11,
+         height: 2}
     ]
 };
