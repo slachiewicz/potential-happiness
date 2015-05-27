@@ -3,7 +3,6 @@
  */
 
 var ph   = require ('../lib/index'),
-    es   = require ('../lib/source/es'),
     util = require ('../lib/util');
 
 module.exports = {
