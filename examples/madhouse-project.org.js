@@ -68,7 +68,6 @@ module.exports = {
                    source: {query: 'service = "total network traffic"',
                             transform: ph.transform.trim_to_fixed (2)}},
          pos_x: 13,
-         pos_y: 7,
          width: 1,
          height: 1},
 
