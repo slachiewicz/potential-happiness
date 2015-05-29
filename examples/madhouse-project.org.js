@@ -81,7 +81,50 @@ module.exports = {
          options: {label: "Logs",
                    source: {index: "syslog-ng",
                             method: "elasticsearch",
-                            limit: 14},
+                            limit: 14,
+                            query: {
+                                sort: {"@timestamp": "desc"},
+                                query: {
+                                    "filtered": {
+                                        "filter": {
+                                            "and": [
+                                                {
+                                                    "range": {
+                                                        "@timestamp": {"lte": "now"}
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        "query": {
+                                            "bool": {
+                                                "must_not": [
+                                                    {
+                                                        "term": {
+                                                            "message.PROGRAM": "edge"
+                                                        }
+                                                    },
+                                                    {
+                                                        "term": {
+                                                            "message.PROGRAM": "wpa_supplicant"
+                                                        }
+                                                    },
+                                                    {
+                                                        "term": {
+                                                            "message.PROGRAM": "networkmanager"
+                                                        }
+                                                    },
+                                                    {
+                                                        "term": {
+                                                            "message.PROGRAM": "modemmanager"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                           },
                    on_message: util.syslog_to_log},
          width: 11,
          height: 2}
