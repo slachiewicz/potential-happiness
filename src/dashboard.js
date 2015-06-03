@@ -1,5 +1,5 @@
 #! /usr/bin/env node
-/* potential-happiness -- Riemann dashboard for the TTY
+/* potential-happiness -- Dashboard for the TTY
  * Copyright (C) 2015  Gergely Nagy <algernon@madhouse-project.org>
  *
  * This program is free software: you can redistribute it and/or modify
