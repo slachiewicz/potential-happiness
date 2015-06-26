@@ -31,6 +31,11 @@ npm install
 src/dashboard.js examples/local-log.js
 ```
 
+For the `examples/local-log.js` example to work, one will need
+[Riemann][riemann] and [ElasticSearch][elasticsearch] installed and
+running. The former also needs to be configured to accept WebSocket
+connections.
+
 License
 -------
 
